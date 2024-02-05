@@ -5,4 +5,4 @@ DOMAIN-KEYWORD,copilot-proxy
 DOMAIN-KEYWORD,copilot-telemetry
 DOMAIN-SUFFIX,api.cocopilot.org
 DOMAIN,chat.oaifree.com
-DOMAIN,chat.iil.im
+DOMAIN-SUFFIX,iil.im
