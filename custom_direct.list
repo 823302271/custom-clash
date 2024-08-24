@@ -7,3 +7,7 @@ DOMAIN-SUFFIX,api.cocopilot.org
 DOMAIN,chat.oaifree.com
 DOMAIN-SUFFIX,iil.im
 DOMAIN-SUFFIX,oaifree.com
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,tailscale.io
+PROCESS-NAME,tailscaled
+PROCESS-NAME,/Applications/Tailscale.app/Contents/MacOS/Tailscale
