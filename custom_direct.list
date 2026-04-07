@@ -11,3 +11,4 @@ DOMAIN-SUFFIX,tailscale.com
 DOMAIN-SUFFIX,tailscale.io
 PROCESS-NAME,tailscaled
 PROCESS-NAME,/Applications/Tailscale.app/Contents/MacOS/Tailscale
+IP-CIDR,193.168.0.0/16,DIRECT
