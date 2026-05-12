@@ -7,6 +7,8 @@ function getArg(key) {
   const match = raw.match(new RegExp("(^|&)" + key + "=([^&]*)"));
   return match ? decodeURIComponent(match[2]) : "";
 }
+const raw = typeof $argument === "string" ? $argument : "";
+
 $notification.post(
   "Loon 参数调试",
   "收到的 $argument",
