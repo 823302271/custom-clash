@@ -8,12 +8,6 @@ function getArg(key) {
   return match ? decodeURIComponent(match[2]) : "";
 }
 
-$notification.post(
-  "Loon 参数调试",
-  "收到的 $argument",
-  $argument
-);
-
 const session = getArg("session");
 const newApiUser = getArg("new_api_user");
 const fullCookie = getArg("cookie");
@@ -21,12 +15,10 @@ const fullCookie = getArg("cookie");
 const cookie = fullCookie || `session=${session}`;
 
 if (!session && !fullCookie) {
-  $notification.post("AnyRouter 参数错误", "", "缺少 session 或 cookie");
   $done("AnyRouter 参数错误 缺少 session 或 cookie");
 }
 
 if (!newApiUser) {
-  $notification.post("AnyRouter 参数错误", "", "缺少 new_api_user");
   $done("AnyRouter 参数错误 缺少 new_api_user");
 }
 
@@ -45,7 +37,6 @@ const headers = {
 $httpClient.post({ url, headers, body: "{}" }, function(error, response, data) {
   if (error) {
     console.log("AnyRouter error: " + JSON.stringify(error));
-    $notification.post("AnyRouter 签到失败", "", String(error));
     $done("AnyRouter error: " + JSON.stringify(error));
     return;
   }
@@ -70,7 +61,7 @@ $httpClient.post({ url, headers, body: "{}" }, function(error, response, data) {
     }
   } catch (e) {}
   console.log("AnyRouter 签到完成")
-  $notification.post(title, "", msg);
+  $notification.post("AnyRouter 签到完成");
   $done(
     "AnyRouter 签到测试结果\n\n" +
     "返回内容:\n" + (data || "无返回内容")
