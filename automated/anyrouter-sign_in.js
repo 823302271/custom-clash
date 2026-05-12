@@ -65,5 +65,8 @@ $httpClient.post({ url, headers, body: "{}" }, function(error, response, data) {
   } catch (e) {}
   console.log("AnyRouter 签到完成")
   $notification.post(title, "", msg);
-  $done();
+  $done(
+    "AnyRouter 签到测试结果\n\n" +
+    "返回内容:\n" + (data || "无返回内容")
+  );
 });
