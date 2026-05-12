@@ -8,12 +8,10 @@ function getArg(key) {
   return match ? decodeURIComponent(match[2]) : "";
 }
 
-const raw = typeof $argument === "string" ? $argument : "";
-
 $notification.post(
   "Loon 参数调试",
   "收到的 $argument",
-  raw || "空参数"
+  $argument
 );
 
 const session = getArg("session");
