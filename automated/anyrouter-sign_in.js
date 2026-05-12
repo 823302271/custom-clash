@@ -16,12 +16,12 @@ const cookie = fullCookie || `session=${session}`;
 
 if (!session && !fullCookie) {
   $notification.post("AnyRouter 参数错误", "", "缺少 session 或 cookie");
-  $done();
+  $done("AnyRouter 参数错误 缺少 session 或 cookie");
 }
 
 if (!newApiUser) {
   $notification.post("AnyRouter 参数错误", "", "缺少 new_api_user");
-  $done();
+  $done("AnyRouter 参数错误 缺少 new_api_user");
 }
 
 const url = "https://anyrouter.top/api/user/sign_in";
@@ -40,7 +40,7 @@ $httpClient.post({ url, headers, body: "{}" }, function(error, response, data) {
   if (error) {
     console.log("AnyRouter error: " + JSON.stringify(error));
     $notification.post("AnyRouter 签到失败", "", String(error));
-    $done();
+    $done("AnyRouter error: " + JSON.stringify(error));
     return;
   }
 
