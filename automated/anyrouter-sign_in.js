@@ -7,6 +7,11 @@ function getArg(key) {
   const match = raw.match(new RegExp("(^|&)" + key + "=([^&]*)"));
   return match ? decodeURIComponent(match[2]) : "";
 }
+$notification.post(
+  "Loon 参数调试",
+  "收到的 $argument",
+  raw || "空参数"
+);
 
 const session = getArg("session");
 const newApiUser = getArg("new_api_user");
