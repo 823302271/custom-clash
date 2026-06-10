@@ -7,6 +7,12 @@
 
 ## 变更记录
 
+### 2026-06-10
+
+- 更新 `automated/anyrouter-sign_in.js`：增加脚本作用与最后修改时间头部注释。
+- 修复 AnyRouter 返回 WAF `arg1` 挑战页时签到失败的问题，脚本会自动计算 `acw_sc__v2` 并携带服务端下发的 `acw_tc`、`cdn_sec_tc` 重试。
+- 启动时主动丢弃配置中旧的 `acw_tc`、`cdn_sec_tc`、`acw_sc__v2` 临时 Cookie，长期配置只需保留 `session` 与 `new_api_user`。
+
 ### 2026-06-09
 
 - 更新 `automated/anyrouter-sign_in.js`：AnyRouter 签到脚本改为先读取 `/api/user/self`，再调用 `/api/user/sign_in`，最后再次读取用户信息，通过签到前后余额与用量变化判断是否真实增加积分。
