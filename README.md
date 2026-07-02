@@ -7,6 +7,11 @@
 
 ## 变更记录
 
+### 2026-07-02
+
+- 新增 `automated/anyrouter-sign_in.surge.js`：将 AnyRouter 签到脚本整理为 Surge 定时任务版本，保留 WAF Cookie 自动刷新与余额校验逻辑。
+- 新增 `automated/anyrouter-sign_in.qx.js`：将 AnyRouter 签到脚本转换为 Quantumult X 定时任务版本，请求层改用 `$task.fetch` 适配 QX 运行时。
+
 ### 2026-06-10
 
 - 更新 `automated/anyrouter-sign_in.js`：增加脚本作用与最后修改时间头部注释。
